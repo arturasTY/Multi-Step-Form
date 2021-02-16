@@ -1,0 +1,308 @@
+.form {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  min-height: 70vh;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #18191f;
+  box-shadow: 0px 0px 10px rgba(black, $alpha: 0.07);
+  @media only screen and (max-width: 870px) {
+    grid-template-columns: 25% 75%;
+  }
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding: 30px;
+  }
+  &__img {
+    background: url(../images/form_bg.png) no-repeat;
+    background-position: center right;
+    background-size: cover;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(black, $alpha: 0.07);
+    @media only screen and (max-width: 768px) {
+      height: 10rem;
+      margin-bottom: 3rem;
+    }
+  }
+  &__content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__stepper {
+    width: 480px;
+    & > div {
+      background-color: #18191f;
+      color: white;
+    }
+  }
+  &__each {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+    &:first-of-type {
+      display: none;
+      visibility: hidden;
+    }
+    .stepNo {
+      background-color: #79d583;
+      padding: 0.25em 0.75em;
+      border-radius: 3px;
+      color: white;
+      &.disabled {
+        background-color: #a1a1a1;
+      }
+    }
+    .stepCopy {
+      margin-left: 1rem;
+      font-weight: 400;
+    }
+  }
+}
+
+.inputs {
+  width: 100%;
+  max-width: 480px;
+  margin-top: 4rem;
+  display: grid;
+  grid-gap: 20px;
+  padding: 0 10px;
+  &__hasTwo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+  .form__block {
+    position: relative;
+    label {
+      color: #a1a1a6;
+      display: block;
+      font-size: 0.85em;
+      margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="password"] {
+      width: 100%;
+      height: 40px;
+      outline: none;
+      appearance: none;
+      color: white;
+      border: none;
+      background-color: #18191f;
+      box-shadow: inset -2px -2px 3px rgba(white, 0.05),
+        inset 3px 3px 3px rgba(black, 0.3);
+      // box-shadow: inset -2px -2px 6px rgba(white, 0.05),
+      //   inset 2px 2px 6px rgba(black, 0.4);
+      padding: 1em;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    input[type="date"] {
+      font-family: inherit;
+      letter-spacing: 0.5px;
+      color: #a1a1a6;
+      cursor: pointer;
+    }
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+      opacity: 0.6;
+      cursor: pointer;
+    }
+    svg {
+      position: absolute;
+      right: 1em;
+      top: 34px;
+      color: #a1a1a6;
+      cursor: pointer;
+    }
+  }
+  .gender {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    &__each {
+      margin-top: 15px;
+      &:first-of-type {
+        margin-right: 3rem;
+      }
+    }
+    label {
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+    }
+    input[type="checkbox"] {
+      display: none;
+    }
+    input[type="checkbox"] + label:before {
+      border: 1px solid #d0d0d0;
+      background: #18191f;
+      content: "";
+      display: inline-block;
+      border-radius: 50%;
+      height: 20px;
+      width: 20px;
+      margin-right: 15px;
+      transition: 0.2s linear;
+      cursor: pointer;
+      transition: box-shadow 200ms ease, background 200ms ease,
+        border 200ms ease;
+    }
+    input[type="checkbox"]:checked + label:before {
+      border: 1px solid #79d583;
+      background: url(../images/checkox_checked.png) no-repeat center;
+      box-shadow: 1px 2px 15px rgba(#79d583, $alpha: 0.3);
+      transition: box-shadow 200ms ease, background 200ms ease,
+        border 200ms ease;
+    }
+  }
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #5465ff; /* Old browsers */
+    // background: -moz-linear-gradient(
+    //   -45deg,
+    //   #72cc7c 0%,
+    //   #60bf8e 100%
+    // ); /* FF3.6-15 */
+    // background: -webkit-linear-gradient(
+    //   -45deg,
+    //   #72cc7c 0%,
+    //   #60bf8e 100%
+    // ); /* Chrome10-25,Safari5.1-6 */
+    // background: linear-gradient(
+    //   135deg,
+    //   #72cc7c 0%,
+    //   #60bf8e 100%
+    // ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#72cc7c', endColorstr='#60bf8e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    outline: none;
+    border: none;
+    color: white;
+    height: 42px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    width: 170px;
+    margin-top: 2rem;
+    margin-left: auto;
+    border-radius: 4px;
+    cursor: pointer;
+    svg {
+      vertical-align: middle;
+      margin-left: 5px;
+    }
+  }
+  .btnOutline {
+    background: none;
+    outline: none;
+    border: none;
+    color: white;
+    height: 40px;
+    line-height: 40px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    width: 170px;
+    margin-top: 2rem;
+    border: 1px solid #5465ff;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
+
+.pricingPlans {
+  color: #a1a1a6;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  &__each {
+    position: relative;
+    border: 2px solid #3498db;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &.selected {
+      background-color: #3498db;
+      color: white;
+    }
+    & > * {
+      padding: 20px;
+    }
+    .header {
+      background-color: #3498db;
+      text-align: center;
+      h3 {
+        color: white;
+      }
+    }
+    &:nth-of-type(2) {
+      border: 2px solid #9b59b6;
+      .header {
+        background-color: #9b59b6;
+      }
+      &.selected {
+        background-color: #9b59b6;
+      }
+    }
+    &:last-of-type {
+      border: 2px solid #e67e22;
+      .header {
+        background-color: #e67e22;
+      }
+      &.selected {
+        background-color: #e67e22;
+      }
+    }
+    .price {
+      h4 {
+        font-size: 1.5em;
+      }
+    }
+    .body {
+      p {
+        font-size: 0.95em;
+        line-height: 1.5;
+      }
+    }
+    .cta {
+      button {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        background: #79d583;
+        outline: none;
+        border: none;
+        color: white;
+        border-radius: 4px;
+        padding: 10px 0;
+        cursor: pointer;
+        svg {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+.selectedPlan {
+  color: white;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  h3 {
+    span {
+      color: #79d583;
+    }
+  }
+  p {
+    color: #a1a1a6;
+    strong {
+      color: white;
+    }
+  }
+}

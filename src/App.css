@@ -1,0 +1,34 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #121217;
+}
+
+.container {
+  padding: 0 1rem;
+  width: calc(min(95%, 1200px));
+}
+
+.intl-tel-input.allow-dropdown input,
+.intl-tel-input.allow-dropdown input[type="text"],
+.intl-tel-input.allow-dropdown input[type="tel"] {
+  padding-left: 60px !important;
+}
+
+.intl-tel-input.allow-dropdown .flag-container .selected-flag {
+  width: 56px;
+}

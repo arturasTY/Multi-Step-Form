@@ -1,0 +1,22 @@
+{
+  "plans": [
+    {
+      "id": 1,
+      "header": "Basic",
+      "price": "5.99",
+      "body": "24 hour Help\r Online Banking\r Easy Set-Up\r 10GB Storage"
+    },
+    {
+      "id": 2,
+      "header": "Standard",
+      "price": "7.99",
+      "body": "24 hour Help\r Online Banking\r Easy Set-Up\r 50GB Storage"
+    },
+    {
+      "id": 3,
+      "header": "Premium",
+      "price": "9.99",
+      "body": "24 hour Help\r Online Banking\r Easy Set-Up\r 80GB Storage"
+    }
+  ]
+}
