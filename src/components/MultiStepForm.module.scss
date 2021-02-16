@@ -12,7 +12,8 @@
   @media only screen and (max-width: 768px) {
     grid-template-columns: 1fr;
     min-height: 0;
-    padding: 30px;
+    padding: 20px;
+    margin: 20px 0;
   }
   &__img {
     background: url(../images/form_bg.png) no-repeat;
@@ -36,6 +37,9 @@
     & > div {
       background-color: #18191f;
       color: white;
+    }
+    @media only screen and (max-width: 600px) {
+      width: 310px;
     }
   }
   &__each {
@@ -73,6 +77,9 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
+    @media only screen and (max-width: 480px) {
+      grid-template-columns: 1fr;
+    }
   }
   .form__block {
     position: relative;
@@ -126,10 +133,16 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    @media only screen and (max-width: 480px) {
+      justify-content: flex-start;
+    }
     &__each {
       margin-top: 15px;
       &:first-of-type {
         margin-right: 3rem;
+      }
+      @media only screen and (max-width: 480px) {
+        margin-bottom: 15px;
       }
     }
     label {
@@ -221,6 +234,10 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+  }
   &__each {
     position: relative;
     border: 2px solid #3498db;
