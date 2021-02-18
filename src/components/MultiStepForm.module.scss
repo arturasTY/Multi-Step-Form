@@ -72,7 +72,6 @@
   margin-top: 4rem;
   display: grid;
   grid-gap: 20px;
-  padding: 0 10px;
   &__hasTwo {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -211,6 +210,11 @@
       vertical-align: middle;
       margin-left: 5px;
     }
+    @media only screen and (max-width: 480px) {
+      width: auto;
+      margin-left: 0;
+      margin-top: 1rem;
+    }
   }
   .btnOutline {
     background: none;
@@ -226,6 +230,9 @@
     border: 1px solid #5465ff;
     border-radius: 4px;
     cursor: pointer;
+    @media only screen and (max-width: 480px) {
+      width: auto;
+    }
   }
 }
 
